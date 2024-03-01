@@ -6,6 +6,9 @@
 
   color: #0f0f0f;
   background-color: #f6f6f6;
+  background-image: url("../public/BackgroundMain.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 1080px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 
 .container {
   margin: 0;

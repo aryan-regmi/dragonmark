@@ -27,8 +27,7 @@
   .race {
     flex: 1 1 25%;
     text-align: left;
-    height: 3vh;
-    margin-left: 5vh;
+    margin-left: 8%;
   }
 
   .race:hover {

@@ -6,16 +6,15 @@
 
   export let chosen = "";
   function choose() {
-    chosen = "Dragonborn";
+    chosen = "Dwarf";
     close();
   }
 </script>
 
 {#if toggleOverlay}
   <div class="overlay">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit tenetur
-    quia ratione eligendi odio dicta labore quo magni facilis nostrum, non totam
-    vel accusamus eos deleniti omnis eius laboriosam officia!
+    Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
+    sint consectetur cupidatat.
     <div>
       <button on:click|preventDefault|stopPropagation={choose}>Choose</button>
       <button on:click|preventDefault|stopPropagation={close}>Close</button>

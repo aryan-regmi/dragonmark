@@ -1,9 +1,10 @@
 <script lang="ts">
   import Dragonborn from "./Dragonborn.svelte";
+  import Dwarf from "./Dwarf.svelte";
 
   const races: { [index: string]: { data: any; visible: boolean } } = {
     Dragonborn: { data: Dragonborn, visible: false },
-    Dwarf: { data: null, visible: false },
+    Dwarf: { data: Dwarf, visible: false },
     Elf: { data: null, visible: false },
     Gnome: { data: null, visible: false },
     "Half-Elf": { data: null, visible: false },
@@ -80,25 +81,38 @@
     Viashino: { data: null, visible: false },
   };
 
-  export let chosenRace = "";
+  let chosenRace: string;
 
-  let overlay = true;
+  let chosenStyle = "color: orange;";
   function raceInfo(this: any) {
     races[this.id].visible = true;
-    overlay = races[this.id].visible;
   }
 </script>
 
 <ul class="races">
   {#each Object.entries(races) as [race, data]}
-    <li class="race-item">
-      <button class="race-btn" id={race} on:click={raceInfo}
-        ><strong>{race}</strong></button
-      >
-    </li>
+    {#if race === chosenRace}
+      <li class="race-item">
+        <button
+          class="race-btn"
+          id={race}
+          style={chosenStyle}
+          on:click={raceInfo}><strong>{race}</strong></button
+        >
+      </li>
+    {:else}
+      <li class="race-item">
+        <button class="race-btn" id={race} style="" on:click={raceInfo}
+          ><strong>{race}</strong></button
+        >
+      </li>
+    {/if}
 
     {#if data.visible}
-      <svelte:component this={data.data} bind:toggleOverlay={data.visible}
+      <svelte:component
+        this={data.data}
+        bind:toggleOverlay={data.visible}
+        bind:chosen={chosenRace}
       ></svelte:component>
     {/if}
   {/each}

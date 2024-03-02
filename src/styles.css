@@ -6,7 +6,7 @@
 
   color: #0f0f0f;
   background-color: #f6f6f6;
-  background-image: url("../public/BackgroundMain.jpeg");
+  background-image: url("/BackgroundMain.jpeg");
   background-repeat: no-repeat;
   background-size: 100% 1080px;
 

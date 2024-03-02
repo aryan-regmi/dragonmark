@@ -2,20 +2,32 @@
   import CreateCharacter from "./CreateCharacter.svelte";
   import LoadCharacter from "./LoadCharacter.svelte";
 
+  enum Option {
+    Main,
+    Create,
+    Load,
+  }
+
+  let currOpt = Option.Main;
+
   let createCharClicked = false;
   let loadCharClicked = false;
   let mainPageClicked = true;
 
   function mainPage() {
+    createCharClicked = false;
+    loadCharClicked = false;
     mainPageClicked = true;
   }
 
   function createCharacterPage() {
     createCharClicked = true;
+    loadCharClicked = false;
     mainPageClicked = false;
   }
 
   function loadCharacterPage() {
+    createCharClicked = false;
     loadCharClicked = true;
     mainPageClicked = false;
   }
@@ -34,7 +46,7 @@
     </div>
 
     <div>
-      <img id="main-page-logo" src="../../public/DndLogo.png" alt="Dnd logo" />
+      <img id="main-page-logo" src="/DndLogo.png" alt="Dnd logo" />
     </div>
 
     <div>

@@ -2,6 +2,7 @@
   import CreationNavbar from "./CreationNavbar.svelte";
   import { NavbarPage } from "./types/NavbarPage.d";
   import CharacterName from "./CharacterName.svelte";
+  import RaceMain from "./races/RaceMain.svelte";
 
   let currPage: any;
   let namePage: any;
@@ -22,6 +23,7 @@
 
   // Data to send to rust
   let characterName: string;
+  let chosenRace: string;
 </script>
 
 <CreationNavbar
@@ -34,6 +36,8 @@
 
 {#if currPage === NavbarPage.Name}
   <CharacterName bind:characterName />
+{:else if currPage === NavbarPage.Race}
+  <RaceMain bind:chosenRace />
 {/if}
 
 {#if currPage !== NavbarPage.Background}
@@ -48,7 +52,7 @@
 
 <style>
   #next-page {
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
 
   #next-page-btn {

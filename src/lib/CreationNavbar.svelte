@@ -8,7 +8,7 @@
   let classStyle = "";
   let backgroundStyle = "";
 
-  function namePage() {
+  export function namePage() {
     currPage = NavbarPage.Name;
     nameStyle = initStyle;
     raceStyle = "";
@@ -16,7 +16,7 @@
     backgroundStyle = "";
   }
 
-  function racePage() {
+  export function racePage() {
     currPage = NavbarPage.Race;
     nameStyle = "";
     raceStyle = initStyle;
@@ -24,7 +24,7 @@
     backgroundStyle = "";
   }
 
-  function classPage() {
+  export function classPage() {
     currPage = NavbarPage.Class;
     nameStyle = "";
     raceStyle = "";
@@ -32,7 +32,7 @@
     backgroundStyle = "";
   }
 
-  function backgroundPage() {
+  export function backgroundPage() {
     currPage = NavbarPage.Background;
     nameStyle = "";
     raceStyle = "";

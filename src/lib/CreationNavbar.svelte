@@ -1,12 +1,7 @@
 <script lang="ts">
-  enum Page {
-    Name,
-    Race,
-    Class,
-    Background,
-  }
+  import { NavbarPage } from "./types/NavbarPage.d";
 
-  export let currPage = Page.Name;
+  export let currPage = NavbarPage.Name;
   let initStyle = "color: orange";
   let nameStyle = initStyle;
   let raceStyle = "";
@@ -14,7 +9,7 @@
   let backgroundStyle = "";
 
   function namePage() {
-    currPage = Page.Name;
+    currPage = NavbarPage.Name;
     nameStyle = initStyle;
     raceStyle = "";
     classStyle = "";
@@ -22,7 +17,7 @@
   }
 
   function racePage() {
-    currPage = Page.Race;
+    currPage = NavbarPage.Race;
     nameStyle = "";
     raceStyle = initStyle;
     classStyle = "";
@@ -30,7 +25,7 @@
   }
 
   function classPage() {
-    currPage = Page.Class;
+    currPage = NavbarPage.Class;
     nameStyle = "";
     raceStyle = "";
     classStyle = initStyle;
@@ -38,7 +33,7 @@
   }
 
   function backgroundPage() {
-    currPage = Page.Background;
+    currPage = NavbarPage.Background;
     nameStyle = "";
     raceStyle = "";
     classStyle = "";

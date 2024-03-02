@@ -6,27 +6,78 @@
     Background,
   }
 
-  let currPage = Page.Name;
+  export let currPage = Page.Name;
+  let initStyle = "color: orange";
+  let nameStyle = initStyle;
+  let raceStyle = "";
+  let classStyle = "";
+  let backgroundStyle = "";
+
+  function namePage() {
+    currPage = Page.Name;
+    nameStyle = initStyle;
+    raceStyle = "";
+    classStyle = "";
+    backgroundStyle = "";
+  }
+
+  function racePage() {
+    currPage = Page.Race;
+    nameStyle = "";
+    raceStyle = initStyle;
+    classStyle = "";
+    backgroundStyle = "";
+  }
+
+  function classPage() {
+    currPage = Page.Class;
+    nameStyle = "";
+    raceStyle = "";
+    classStyle = initStyle;
+    backgroundStyle = "";
+  }
+
+  function backgroundPage() {
+    currPage = Page.Background;
+    nameStyle = "";
+    raceStyle = "";
+    classStyle = "";
+    backgroundStyle = initStyle;
+  }
 </script>
 
-<div id="creation-navbar">
-  <label>
-    <button>Name</button>
-  </label>
-  <label>
-    <button>Race</button>
-  </label>
-  <label>
-    <button>Class</button>
-  </label>
-  <label>
-    <button>Background</button>
-  </label>
-</div>
+<nav>
+  <button class="nav-item" style={nameStyle} on:click={namePage}>Name</button>
+  <button class="nav-item" style={raceStyle} on:click={racePage}>Race</button>
+  <button class="nav-item" style={classStyle} on:click={classPage}>Class</button
+  >
+  <button class="nav-item" style={backgroundStyle} on:click={backgroundPage}
+    >Background</button
+  >
+</nav>
 
 <style>
-  #creation-navbar {
-    display: flexbox;
-    flex-direction: row;
+  nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    border-style: groove;
+    opacity: 80%;
+    justify-content: center;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+  }
+
+  .nav-item {
+    padding-left: 5vw;
+    background-color: inherit;
+    opacity: 100%;
+  }
+
+  button:hover {
+    color: red;
+    border-color: black;
   }
 </style>

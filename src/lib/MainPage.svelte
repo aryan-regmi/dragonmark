@@ -72,7 +72,6 @@
 
   .main-menu-item {
     width: 50vw;
-    opacity: 100%;
   }
 
   #create-character-button {

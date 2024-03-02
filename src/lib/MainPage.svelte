@@ -22,22 +22,27 @@
 </script>
 
 {#if mainPageClicked}
-  <div>
-    <img id="main-page-logo" src="../../public/DndLogo.png" alt="Dnd logo" />
-  </div>
   <div id="main-menu">
     <div>
       <label>
-        <button class="main-menu-item" on:click={createCharacterPage}
-          >Create Character</button
+        <button
+          id="create-character-button"
+          class="main-menu-item"
+          on:click={createCharacterPage}>Create Character</button
         >
       </label>
     </div>
 
     <div>
+      <img id="main-page-logo" src="../../public/DndLogo.png" alt="Dnd logo" />
+    </div>
+
+    <div>
       <label>
-        <button class="main-menu-item" on:click={loadCharacterPage}
-          >Load Character</button
+        <button
+          id="load-character-button"
+          class="main-menu-item"
+          on:click={loadCharacterPage}>Load Character</button
         >
       </label>
     </div>
@@ -66,8 +71,17 @@
 
   .main-menu-item {
     width: 50vw;
-    margin-bottom: 20vh;
     opacity: 100%;
+  }
+
+  #create-character-button {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+
+  #load-character-button {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
   }
 
   #main-page-logo {

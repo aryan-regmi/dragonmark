@@ -23,7 +23,7 @@
 
 {#if mainPageClicked}
   <div>
-    <img id="main-page-logo" src="../../public/DndLogo.png" alt="Dnd Image" />
+    <img id="main-page-logo" src="../../public/DndLogo.png" alt="Dnd logo" />
   </div>
   <div id="main-menu">
     <div>
@@ -55,6 +55,11 @@
 {/if}
 
 <style>
+  button:hover {
+    border-color: red;
+    color: red;
+  }
+
   #main-menu {
     margin-top: 3vh;
   }
@@ -63,11 +68,6 @@
     width: 50vw;
     margin-bottom: 20vh;
     opacity: 100%;
-  }
-
-  button:hover {
-    border-color: red;
-    color: red;
   }
 
   #main-page-logo {

@@ -35,9 +35,16 @@
 {#if currPage === NavbarPage.Name}
   <CharacterName bind:characterName />
 {/if}
-<div id="next-page">
-  <button id="next-page-btn" on:click={nextPage}>Next</button>
-</div>
+
+{#if currPage !== NavbarPage.Background}
+  <div id="next-page">
+    <button id="next-page-btn" on:click={nextPage}>Next</button>
+  </div>
+{:else}
+  <div id="next-page">
+    <button id="next-page-btn">Create</button>
+  </div>
+{/if}
 
 <style>
   #next-page {

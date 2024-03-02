@@ -7,33 +7,22 @@
     Create,
     Load,
   }
-
   let currOpt = Option.Main;
 
-  let createCharClicked = false;
-  let loadCharClicked = false;
-  let mainPageClicked = true;
-
   function mainPage() {
-    createCharClicked = false;
-    loadCharClicked = false;
-    mainPageClicked = true;
+    currOpt = Option.Main;
   }
 
   function createCharacterPage() {
-    createCharClicked = true;
-    loadCharClicked = false;
-    mainPageClicked = false;
+    currOpt = Option.Create;
   }
 
   function loadCharacterPage() {
-    createCharClicked = false;
-    loadCharClicked = true;
-    mainPageClicked = false;
+    currOpt = Option.Load;
   }
 </script>
 
-{#if mainPageClicked}
+{#if currOpt === Option.Main}
   <div id="main-menu">
     <div>
       <label>
@@ -59,12 +48,12 @@
       </label>
     </div>
   </div>
-{:else if createCharClicked}
+{:else if currOpt === Option.Create}
   <div>
     <label><button on:click={mainPage}>Main Menu</button></label>
   </div>
   <CreateCharacter />
-{:else if loadCharClicked}
+{:else if currOpt === Option.Load}
   <div>
     <label><button on:click={mainPage}>Main Menu</button></label>
   </div>

@@ -8,6 +8,13 @@
   background-color: #f6f6f6;
   background: url("/Background.jpeg") no-repeat center center fixed;
 
+  /* overflow: scroll; */
+  /* overflow-inline: scroll; */
+  /* overflow-block: scroll; */
+  /* overflow-wrap: scroll; */
+  /* overflow-anchor: scroll; */
+  overflow-y: auto;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

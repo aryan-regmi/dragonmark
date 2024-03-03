@@ -13,7 +13,7 @@
 
 {#if toggleOverlay}
   <div class="overlay">
-    <div>
+    <div id="data">
       <slot />
     </div>
     <div class="btns">
@@ -25,21 +25,19 @@
 
 <style>
   .overlay {
-    position: fixed;
-    display: block;
+    position: absolute;
     width: 80%;
-    height: 100%;
     left: 10%;
     background-color: #3e3e28;
     opacity: 98%;
     z-index: 2;
     cursor: pointer;
-    overflow-y: scroll;
     border-radius: 1vw;
-    cursor: pointer;
+    cursor: default;
   }
 
   .btns {
-    padding-top: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
   }
 </style>

@@ -16,7 +16,7 @@
     <div>
       <slot />
     </div>
-    <div>
+    <div class="btns">
       <button on:click|preventDefault|stopPropagation={choose}>Choose</button>
       <button on:click|preventDefault|stopPropagation={close}>Close</button>
     </div>
@@ -30,10 +30,15 @@
     width: 80%;
     height: 100%;
     left: 10%;
-    background-color: #3d3d29;
+    background-color: #3e3e28;
+    /* background-color: #3d3d29; */
     opacity: 98%;
     z-index: 2;
     cursor: pointer;
     overflow-y: scroll;
+  }
+
+  .btns {
+    padding-top: 3vh;
   }
 </style>

@@ -4,7 +4,7 @@
     toggleOverlay = !toggleOverlay;
   }
 
-  export let chosen = "";
+  export let chosen: string;
   function choose() {
     chosen = "Dragonborn";
     close();
@@ -31,11 +31,12 @@
     height: 100%;
     left: 10%;
     background-color: #3e3e28;
-    /* background-color: #3d3d29; */
     opacity: 98%;
     z-index: 2;
     cursor: pointer;
     overflow-y: scroll;
+    border-radius: 1vw;
+    cursor: pointer;
   }
 
   .btns {

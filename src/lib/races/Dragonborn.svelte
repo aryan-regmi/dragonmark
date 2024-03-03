@@ -2,7 +2,7 @@
   import Overlay from "./Overlay.svelte";
 
   export let toggleOverlay: boolean;
-  export let chosen = "";
+  export let chosen: string;
 </script>
 
 <Overlay bind:toggleOverlay bind:chosen>
@@ -25,16 +25,17 @@
       </p>
     </div>
 
-    <div class="info-item">
-      <strong>Ability Score Increase.</strong> Your Strength score increases by 2,
-      and your Charisma score increases by 1.
-    </div>
-
-    <div class="info-item">
-      <strong>Age.</strong> Young dragonborn grow quickly. They walk hours after
-      hatching, attain the size and development of a 10-year-old human child by the
-      age of 3, and reach adulthood by 15. They live to be around 80.
-    </div>
+    <ul>
+      <li>
+        <strong>Ability Score Increase.</strong> Your Strength score increases by
+        2, and your Charisma score increases by 1.
+      </li>
+      <li>
+        <strong>Age.</strong> Young dragonborn grow quickly. They walk hours after
+        hatching, attain the size and development of a 10-year-old human child by
+        the age of 3, and reach adulthood by 15. They live to be around 80.
+      </li>
+    </ul>
   </div>
 </Overlay>
 
@@ -44,6 +45,7 @@
     border-radius: 1vw;
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 1vh;
     padding: 1vh;
     background-color: #1f1f14;
     justify-content: left;
@@ -54,7 +56,16 @@
     padding-bottom: 1vh;
   }
 
-  .info-item {
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
     padding-bottom: 1vh;
+    text-align: left;
+  }
+
+  li::marker {
+    font-size: 1vw;
   }
 </style>

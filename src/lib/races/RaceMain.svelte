@@ -81,7 +81,7 @@
     Viashino: { data: null, visible: false },
   };
 
-  let chosenRace: string;
+  export let chosenRace: string = "";
 
   let chosenStyle = "color: orange;";
   function raceInfo(this: any) {

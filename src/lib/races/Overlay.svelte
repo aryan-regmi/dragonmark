@@ -1,14 +1,19 @@
 <script lang="ts">
   export let toggleOverlay: boolean;
+  export let hasSubtype: boolean;
+  export let subtypeChosen: boolean;
+  export let chosen: string;
+
   function close() {
     toggleOverlay = !toggleOverlay;
   }
 
-  export let chosen: string;
   function choose() {
     chosen = "Dragonborn";
     close();
   }
+
+  let disabled = !(hasSubtype !== subtypeChosen);
 </script>
 
 {#if toggleOverlay}
@@ -17,7 +22,9 @@
       <slot />
     </div>
     <div class="btns">
-      <button on:click|preventDefault|stopPropagation={choose}>Choose</button>
+      <button on:click|preventDefault|stopPropagation={choose} {disabled}
+        >Choose</button
+      >
       <button on:click|preventDefault|stopPropagation={close}>Close</button>
     </div>
   </div>
@@ -39,5 +46,13 @@
   .btns {
     padding-top: 2vh;
     padding-bottom: 2vh;
+  }
+
+  button:disabled {
+    background-color: gray;
+  }
+
+  button:disabled:hover {
+    border-color: gray;
   }
 </style>

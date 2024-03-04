@@ -63,6 +63,7 @@
     justify-content: center;
     margin-bottom: 2vh;
     margin-top: 1vh;
+    z-index: 5;
   }
 
   .nav-item {

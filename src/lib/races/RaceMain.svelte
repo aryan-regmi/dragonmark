@@ -82,6 +82,7 @@
   };
 
   export let chosenRace: string = "";
+  export let chosenSubtype: string = "";
 
   let chosenStyle = "color: orange;";
   function raceInfo(this: any) {
@@ -113,6 +114,7 @@
         this={data.data}
         bind:toggleOverlay={data.visible}
         bind:chosen={chosenRace}
+        bind:subtype={chosenSubtype}
       ></svelte:component>
     {/if}
   {/each}

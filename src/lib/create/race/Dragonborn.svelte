@@ -1,10 +1,17 @@
 <script lang="ts">
   import Overlay from "./Overlay.svelte";
+  import Dropdown from "./Dropdown.svelte";
+  import type { SourceType } from "../../types/SourceType.d";
+  import {
+    AttributeType,
+    type Attribute,
+    type RaceType,
+  } from "../../types/Dragonborn.d";
 
-  export let toggle: boolean;
-  export let chosen: string = ""; // TODO: Add button for this!
+  export let toggle: boolean; // Toggles the overlay
+  export let chosenRace: string = ""; // Lets `race/Main` know which race was chosen
+  let chosenSubtype: string = "Black";
 
-  type SourceType = { [index: string]: string };
   let sources: SourceType = {
     phb: "Player's Handbook",
     wildemount: "Explorer's Guide to Wildemount",
@@ -13,75 +20,71 @@
   };
   let currentSource = sources["phb"];
 
-  let sourceBtnDisplay = "display: none";
-  function sourceOptions() {
-    if (sourceBtnDisplay === "display: block") {
-      sourceBtnDisplay = "display: none";
-    } else {
-      sourceBtnDisplay = "display: block";
-    }
-  }
+  let subtypes = {
+    phb: { black: "Black", blue: "Blue", brass: "Brass" },
+    wildemount: [],
+    fizban: [],
+    ua: [],
+  };
 
-  function changeSource(this: any) {
-    currentSource = sources[this.id];
-    sourceOptions();
-  }
+  export let raceData: RaceType = {
+    asi: [
+      { type: AttributeType.STR, value: 2 },
+      { type: AttributeType.CHA, value: 1 },
+    ],
+    speed: 30,
+  };
 </script>
 
-<Overlay bind:toggle>
-  <div id="change-src">
-    <button class="dropdown" id="change-src-btn" on:click={sourceOptions}
-      >Change Source: {currentSource}</button
-    >
-    {#each Object.entries(sources) as [key, src]}
-      <button
-        class="dropdown-content"
-        style={sourceBtnDisplay}
-        id={key}
-        on:click={changeSource}>{src}</button
-      >
-    {/each}
-  </div>
+<Overlay
+  bind:toggle
+  bind:chosenRace
+  race="Dragonborn"
+  hasSubtypes={true}
+  subtypeChosen={true}
+>
+  <Dropdown {sources} bind:currChoice={currentSource} />
 
   <div id="contents">
     {#if currentSource === sources["phb"]}
-      <!-- TODO: Impl -->
+      <div id="summary">
+        <strong
+          ><em>
+            Born of dragons, as their name proclaims, the dragonborn walk
+            proudly through a world that greets them with fearful
+            incomprehension. Shaped by draconic gods or the dragons themselves,
+            dragonborn originally hatched from dragon eggs as a unique race,
+            combining the best attributes of dragons and humanoids. Some
+            dragonborn are faithful servants to true dragons, others form the
+            ranks of soldiers in great wars, and still others find themselves
+            adrift, with no clear calling in life.
+          </em></strong
+        >
+      </div>
+
+      <div id="subtype-choices">
+        <Dropdown
+          sources={subtypes.phb}
+          mainButtonMsg="Choose Subtype:"
+          bind:currChoice={chosenSubtype}
+        />
+      </div>
     {:else if currentSource === sources["wildemount"]}
+      WILDEMOUNT
       <!-- TODO: Impl -->
     {:else if currentSource === sources["fizban"]}
+      FIZBAN
       <!-- TODO: Impl -->
     {:else if currentSource === sources["ua"]}
+      UA
       <!-- TODO: Impl -->
     {/if}
   </div>
 </Overlay>
 
 <style>
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0;
-  }
-
-  .dropdown-content {
-    z-index: 1;
-    opacity: 90%;
-    width: 100%;
-  }
-
-  #change-src {
-    padding-bottom: 1vh;
-  }
-
-  #change-src-btn {
-    width: 100%;
-    background-color: black;
-    opacity: 80%;
-  }
-
-  button:hover {
-    color: white;
-    border-color: white;
+  #summary {
+    padding-top: 1vh;
+    padding-bottom: 2vh;
   }
 </style>
-

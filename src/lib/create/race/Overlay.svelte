@@ -1,8 +1,29 @@
 <script lang="ts">
-  export let toggle: boolean;
+  export let race: string;
+  export let hasSubtypes: boolean;
+  export let subtypeChosen: boolean;
 
+  export let toggle: boolean;
   function close() {
     toggle = !toggle;
+  }
+
+  function disabledBtn(): boolean {
+    if (hasSubtypes) {
+      if (subtypeChosen) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  let disableChooseBtn = disabledBtn();
+  export let chosenRace: string;
+  function choose() {
+    chosenRace = race;
+    close();
   }
 </script>
 
@@ -13,7 +34,12 @@
     </div>
 
     <div class="btns">
-      <button id="btn" on:click|preventDefault|stopPropagation={close}
+      <button
+        id="choose-btn"
+        on:click|preventDefault|stopPropagation={choose}
+        disabled={disableChooseBtn}>Choose</button
+      >
+      <button id="close-btn" on:click|preventDefault|stopPropagation={close}
         >Close</button
       >
     </div>
@@ -44,5 +70,10 @@
   .btns {
     padding-top: 2vh;
     padding-bottom: 2vh;
+  }
+
+  #choose-btn:disabled:hover {
+    background-color: gray;
+    border-color: gray;
   }
 </style>

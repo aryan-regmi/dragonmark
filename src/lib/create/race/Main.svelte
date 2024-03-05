@@ -82,12 +82,11 @@
   };
 
   // Determines which race is currently chosen
-  export let chosenRace = "";
+  export let chosenRace: string;
   let chosenStyle = "color: orange";
 
   function showInfo(this: any) {
     races[this.id].visible = true;
-    // chosenRace = this.id;
   }
 </script>
 
@@ -109,7 +108,10 @@
     {/if}
 
     {#if data.visible}
-      <svelte:component this={data.data} bind:toggle={data.visible}
+      <svelte:component
+        this={data.data}
+        bind:toggle={data.visible}
+        bind:chosenRace
       ></svelte:component>
     {/if}
   {/each}

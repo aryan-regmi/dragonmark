@@ -1,55 +1,46 @@
 <script lang="ts">
-  import CreateCharacter from "./create/Main.svelte";
+  import CreateCharacter from "./CreateCharacter.svelte";
+  import LoadCharacter from "./LoadCharacter.svelte";
 
-  enum Option {
+  // TODO: Add search bar
+
+  // The options in the main menu.
+  enum MainMenuOpts {
     Main,
     Create,
     Load,
   }
+  let currOpt = MainMenuOpts.Main;
 
-  // The currently selected menu option.
-  let currOpt = Option.Main;
+  function createCharacter() {
+    currOpt = MainMenuOpts.Create;
+  }
 
-  /// Go to main menu.
+  function loadCharacter() {
+    currOpt = MainMenuOpts.Load;
+  }
+
   function mainMenu() {
-    currOpt = Option.Main;
-  }
-
-  // Create character page.
-  function createChar() {
-    currOpt = Option.Create;
-  }
-
-  // Load character page.
-  function loadChar() {
-    currOpt = Option.Load;
+    currOpt = MainMenuOpts.Main;
   }
 </script>
 
-{#if currOpt === Option.Main}
+{#if currOpt === MainMenuOpts.Main}
   <div id="main-menu">
-    <div>
-      <button
-        class="main-menu-item"
-        id="create-character-btn"
-        on:click={createChar}>Create Character</button
-      >
-    </div>
-
+    <button class="main-menu-item" on:click={createCharacter}
+      >Create Character</button
+    >
     <div><img id="main-menu-logo" src="/DndLogo.png" alt="Dnd Logo" /></div>
-
-    <div>
-      <button class="main-menu-item" id="load-character-btn" on:click={loadChar}
-        >Load Character</button
-      >
-    </div>
+    <button class="main-menu-item" on:click={loadCharacter}
+      >Load Character</button
+    >
   </div>
-{:else if currOpt === Option.Create}
+{:else if currOpt === MainMenuOpts.Create}
   <div><button id="main-menu-btn" on:click={mainMenu}>Main Menu</button></div>
   <CreateCharacter />
-{:else if currOpt === Option.Load}
+{:else if currOpt === MainMenuOpts.Load}
   <div><button id="main-menu-btn" on:click={mainMenu}>Main Menu</button></div>
-  <!-- TODO: LOAD CHAR SLOT -->
+  <LoadCharacter />
 {/if}
 
 <style>

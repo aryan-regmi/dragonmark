@@ -14,7 +14,7 @@
 
 <style>
   #name-section {
-    padding-top: 25vh;
+    padding-top: 20vh;
   }
 
   #name-title {

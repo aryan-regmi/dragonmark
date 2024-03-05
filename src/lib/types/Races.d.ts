@@ -86,3 +86,30 @@ export interface RaceInfo {
   display: boolean;
 }
 
+export interface Subtype {
+  name: string;
+  source: string;
+  info: SubtypeInfo;
+}
+
+export enum Size {
+  Small,
+  Medium,
+  Large,
+}
+
+export enum Attributes {
+  STR,
+  DEX,
+  CON,
+  INT,
+  WIS,
+  CHA,
+}
+
+export interface SubtypeInfo {
+  asi: { [index: Attributes]: number };
+  size: Size;
+  misc: { [index: string]: any };
+}
+

@@ -1,23 +1,27 @@
 <script lang="ts">
-  import CreateCharacter from "./CreateCharacter.svelte";
-  import LoadCharacter from "./LoadCharacter.svelte";
+  import CreateCharacter from "./create/Main.svelte";
 
   enum Option {
     Main,
     Create,
     Load,
   }
+
+  // The currently selected menu option.
   let currOpt = Option.Main;
 
-  function mainPage() {
+  /// Go to main menu.
+  function mainMenu() {
     currOpt = Option.Main;
   }
 
-  function createCharacterPage() {
+  // Create character page.
+  function createChar() {
     currOpt = Option.Create;
   }
 
-  function loadCharacterPage() {
+  // Load character page.
+  function loadChar() {
     currOpt = Option.Load;
   }
 </script>
@@ -25,70 +29,45 @@
 {#if currOpt === Option.Main}
   <div id="main-menu">
     <div>
-      <label>
-        <button
-          id="create-character-button"
-          class="main-menu-item"
-          on:click={createCharacterPage}>Create Character</button
-        >
-      </label>
+      <button
+        class="main-menu-item"
+        id="create-character-btn"
+        on:click={createChar}>Create Character</button
+      >
     </div>
 
-    <div>
-      <img id="main-page-logo" src="/DndLogo.png" alt="Dnd logo" />
-    </div>
+    <div><img id="main-menu-logo" src="/DndLogo.png" alt="Dnd Logo" /></div>
 
     <div>
-      <label>
-        <button
-          id="load-character-button"
-          class="main-menu-item"
-          on:click={loadCharacterPage}>Load Character</button
-        >
-      </label>
+      <button class="main-menu-item" id="load-character-btn" on:click={loadChar}
+        >Load Character</button
+      >
     </div>
   </div>
 {:else if currOpt === Option.Create}
-  <div>
-    <label><button on:click={mainPage}>Main Menu</button></label>
-  </div>
+  <div><button id="main-menu-btn" on:click={mainMenu}>Main Menu</button></div>
   <CreateCharacter />
 {:else if currOpt === Option.Load}
-  <div>
-    <label><button on:click={mainPage}>Main Menu</button></label>
-  </div>
-  <LoadCharacter />
+  <div><button id="main-menu-btn" on:click={mainMenu}>Main Menu</button></div>
+  <!-- TODO: LOAD CHAR SLOT -->
 {/if}
 
 <style>
-  button:hover {
-    border-color: red;
-    color: red;
-  }
-
   #main-menu {
-    margin-top: 3vh;
-  }
-
-  .main-menu-item {
-    width: 50vw;
-  }
-
-  #create-character-button {
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-  }
-
-  #load-character-button {
     margin-top: 5vh;
-    margin-bottom: 5vh;
   }
 
-  #main-page-logo {
+  #main-menu-logo {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: 0;
     height: 20vh;
-    justify-self: center;
+    justify-content: center;
+  }
+
+  .main-menu-item {
+    width: 50vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
   }
 </style>

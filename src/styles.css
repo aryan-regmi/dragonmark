@@ -8,12 +8,7 @@
   background-color: #f6f6f6;
   background: url("/Background.jpeg") no-repeat center center fixed;
 
-  /* overflow: scroll; */
-  /* overflow-inline: scroll; */
-  /* overflow-block: scroll; */
-  /* overflow-wrap: scroll; */
-  /* overflow-anchor: scroll; */
-  overflow-y: auto;
+  overflow-y: hidden;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,22 +24,6 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
-  display: flex;
-  justify-content: center;
 }
 
 a {
@@ -80,12 +59,22 @@ button {
 }
 
 button:hover {
-  border-color: #396cd8;
+  border-color: red;
+  color: red;
 }
 
 button:active {
-  border-color: #396cd8;
+  border-color: red;
   background-color: #e8e8e8;
+}
+
+button:disabled {
+  background-color: gray;
+}
+
+button:disabled:hover {
+  border-color: gray;
+  color: white;
 }
 
 input,

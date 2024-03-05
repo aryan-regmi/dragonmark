@@ -87,7 +87,7 @@
 
   function showInfo(this: any) {
     races[this.id].visible = true;
-    chosenRace = this.id;
+    // chosenRace = this.id;
   }
 </script>
 

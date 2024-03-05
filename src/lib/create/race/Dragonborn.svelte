@@ -2,43 +2,57 @@
   import Overlay from "./Overlay.svelte";
 
   export let toggle: boolean;
+  export let chosen: string = ""; // TODO: Add button for this!
 
-  let display = "display: none";
+  type SourceType = { [index: string]: string };
+  let sources: SourceType = {
+    phb: "Player's Handbook",
+    wildemount: "Explorer's Guide to Wildemount",
+    fizban: "Fizban's Treasury of Dragons",
+    ua: "Unearthed Arcana",
+  };
+  let currentSource = sources["phb"];
+
+  let sourceBtnDisplay = "display: none";
   function sourceOptions() {
-    if (display === "display: block") {
-      display = "display: none";
+    if (sourceBtnDisplay === "display: block") {
+      sourceBtnDisplay = "display: none";
     } else {
-      display = "display: block";
+      sourceBtnDisplay = "display: block";
     }
   }
 
-  const summary =
-    "\
-            Born of dragons, as their name proclaims, the dragonborn walk\
-            proudly through a world that greets them with fearful\
-            incomprehension. Shaped by draconic gods or the dragons themselves,\
-            dragonborn originally hatched from dragon eggs as a unique race,\
-            combining the best attributes of dragons and humanoids. Some\
-            dragonborn are faithful servants to true dragons, others form the\
-            ranks of soldiers in great wars, and still others find themselves\
-            adrift, with no clear calling in life.\
-    ";
+  function changeSource(this: any) {
+    currentSource = sources[this.id];
+    sourceOptions();
+  }
 </script>
 
 <Overlay bind:toggle>
   <div id="change-src">
     <button class="dropdown" id="change-src-btn" on:click={sourceOptions}
-      >Change Source</button
+      >Change Source: {currentSource}</button
     >
-    <!-- <button class="dropdown-content" id="change-src-btn" style={display} -->
-    <!--   >Source 1</button -->
-    <!-- > -->
-    <button class="dropdown-content" id="change-src-btn" style={display}
-      >Source 2</button
-    >
+    {#each Object.entries(sources) as [key, src]}
+      <button
+        class="dropdown-content"
+        style={sourceBtnDisplay}
+        id={key}
+        on:click={changeSource}>{src}</button
+      >
+    {/each}
   </div>
-  <div id="summary">
-    {summary}
+
+  <div id="contents">
+    {#if currentSource === sources["phb"]}
+      <!-- TODO: Impl -->
+    {:else if currentSource === sources["wildemount"]}
+      <!-- TODO: Impl -->
+    {:else if currentSource === sources["fizban"]}
+      <!-- TODO: Impl -->
+    {:else if currentSource === sources["ua"]}
+      <!-- TODO: Impl -->
+    {/if}
   </div>
 </Overlay>
 
@@ -46,15 +60,13 @@
   .dropdown {
     position: relative;
     display: inline-block;
+    margin-bottom: 0;
   }
 
   .dropdown-content {
-    /* position: absolute; */
-    /* min-width: 160px; */
-    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
     z-index: 1;
-    background-color: black;
-    opacity: 80%;
+    opacity: 90%;
+    width: 100%;
   }
 
   #change-src {
@@ -63,6 +75,8 @@
 
   #change-src-btn {
     width: 100%;
+    background-color: black;
+    opacity: 80%;
   }
 
   button:hover {

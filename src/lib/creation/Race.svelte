@@ -48,6 +48,13 @@
     chosenRace = races[idx].race;
     closeOverlay(idx);
   }
+
+  // Disable `Choose` button if race has subtypes to choose etc
+  let hasSubtype: boolean;
+  let subtypeChosen: boolean;
+  $: disabledBtn = hasSubtype !== subtypeChosen;
+
+  // TODO: Get detailed race info from the chosen race
 </script>
 
 <ul id="races">
@@ -73,9 +80,15 @@
 
     {#if race.display && i === currOpen}
       <div id="overlay-content" popover="auto">
-        <svelte:component this={race.component}></svelte:component>
+        <svelte:component
+          this={race.component}
+          bind:hasSubtype
+          bind:subtypeChosen
+        ></svelte:component>
         <div class="btns">
-          <button on:click={() => chooseRace(i)}>Choose</button>
+          <button disabled={disabledBtn} on:click={() => chooseRace(i)}
+            >Choose</button
+          >
           <button on:click={() => closeOverlay(i)}>Close</button>
         </div>
       </div>
@@ -85,7 +98,8 @@
 
 <style>
   #overlay-content {
-    background-color: #3e3e28;
+    background-color: #391313;
+    opacity: 98%;
     width: 80%;
     height: 80%;
   }
@@ -124,5 +138,14 @@
 
   li {
     display: inline;
+  }
+
+  button:disabled {
+    border-color: gray;
+    color: black;
+  }
+  button:disabled:hover {
+    border-color: gray;
+    color: black;
   }
 </style>

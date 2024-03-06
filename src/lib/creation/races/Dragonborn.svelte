@@ -1,6 +1,5 @@
 <script lang="ts">
   import Dropdown from "../Dropdown.svelte";
-  import { type SubtypeInfo } from "../../types/Races.d";
 
   export const hasSubtype = true;
   export let subtypeChosen = false;
@@ -11,11 +10,30 @@
     "Fizban's Treasury of Dragons",
     "Unearthed Arcana",
   ];
-  let currSource = sources[0];
+  let defaultSource = sources[3];
+  let currSource: string;
 
-  let dragonBreath: string;
+  // Disables `Choose` btn if source is switched
+  $: changedSource = currSource !== defaultSource;
+  $: if (changedSource) {
+    subtypeChosen = false;
+  }
 
-  $: if (dragonBreath !== "") {
+  // Subtype from PHB
+  let phbSubtype: string;
+  $: if (phbSubtype !== "") {
+    subtypeChosen = true;
+  }
+
+  // Subtype from Wildemount
+  let wildemountSubtype: string;
+  $: if (wildemountSubtype !== "") {
+    subtypeChosen = true;
+  }
+
+  // Subtype from Fizban
+  let fizbanSubtype: string;
+  $: if (fizbanSubtype !== "") {
     subtypeChosen = true;
   }
 </script>
@@ -26,6 +44,7 @@
   title="Select Source"
   dropdownOpts={sources}
   bind:currOpt={currSource}
+  defaultOpt={defaultSource}
 />
 
 <div id="content">
@@ -173,12 +192,227 @@
         "Silver",
         "White",
       ]}
-      bind:currOpt={dragonBreath}
+      bind:currOpt={phbSubtype}
     />
   {:else if currSource === sources[1]}
-    WILDEMOUNT
+    <h2>Draconblood</h2>
+    <p>
+      <em>
+        Draconbloods possess long tails and a knack for social manipulation.
+        They remember the days when they were once mighty conquerors. A
+        draconblood uses the dragonborn traits in the Player's Handbook, with
+        the following traits replacing the Ability Score Increase and Damage
+        Resistance traits.
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Intelligence score increases
+        by 2, and your Charisma score increases by 1.
+      </li>
+      <li>
+        <strong>Darkvision:</strong>
+        You can see in dim light within 60 feet of you as if it were bright light,
+        and in darkness as if it were dim light. You can't discern color in darkness,
+        only shades of gray.
+      </li>
+      <li>
+        <strong>Forceful Presence:</strong> When you make a Intimidation or Persuasion
+        check, you can do so with advantage once per long rest.
+      </li>
+    </ul>
+
+    <h2>Ravenite</h2>
+    <p>
+      <em>
+        Ravenites have no tails and a hearty physique. They remember the days
+        when they were slaves to the draconblood, as well as the day when they
+        overthrew their masters. A ravenite uses the dragonborn traits in the
+        Player's Handbook, with the following traits replacing the Ability Score
+        Increase and Damage Resistance traits.
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Strength score increases by
+        2, and your Constitution score increases by 1.
+      </li>
+      <li>
+        <strong>Darkvision:</strong>
+        You can see in dim light within 60 feet of you as if it were bright light,
+        and in darkness as if it were dim light. You can't discern color in darkness,
+        only shades of gray.
+      </li>
+      <li>
+        <strong>Vengeful Assault:</strong> When you take damage from a creature in
+        range of a weapon you are wielding, you can use your reaction to make an
+        attack against that creature. You can do this once per short or long rest.
+      </li>
+    </ul>
+
+    <Dropdown
+      title="Select Source"
+      dropdownOpts={["Draconblood", "Ravenite"]}
+      bind:currOpt={wildemountSubtype}
+    />
   {:else if currSource === sources[2]}
-    FIZBAN
+    <h2>Chromatic</h2>
+    <p>
+      <em>
+        Dragonborn with chromatic ancestry claim the raw elemental power of
+        chromatic dragons. The vibrant colors of black, blue, green, red, and
+        white dragons gleam in those dragonborn's scaled skin and in the deadly
+        energy of their breath weapons. Theirs is the raw elemental fury of the
+        volcano, of biting arctic winds, and of raging lightning storms, as well
+        as the subtle whisper of swamp and forest, toxic and corrosive.
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong>
+        You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong>
+        Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Chromatic Ancestry:</strong>
+        You trace your ancestry to a chromatic dragon, granting you a special magical
+        affinity. Choose one type of dragon from the Chromatic Ancestry table. This
+        determines the damage type for your other traits as shown in the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon Color</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Black</td>
+        <td>Acid</td>
+        <td>5ft x 30ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Blue</td>
+        <td>Lightning</td>
+        <td>5ft x 30ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td>Poison</td>
+        <td>5ft x 30ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Red</td>
+        <td>Fire</td>
+        <td>5ft x 30ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>White</td>
+        <td>Cold</td>
+        <td>5ft x 30ft Line (DEX save)</td>
+      </tr>
+    </table>
+
+    <h2>Metallic</h2>
+    <p>
+      <em>
+        Dragonborn with metallic ancestry lay claim to the tenacity of metallic
+        dragons — brass, bronze, copper, gold, and silver — whose hues glint in
+        their scales. Theirs is the fire of hearth and forge, the cold of high
+        mountain air, the spark of inspiration, and the scouring touch of acid
+        that purifies.
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong>
+        You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong>
+        Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Metallic Ancestry:</strong>
+        You trace your ancestry to a metallic dragon, granting you a special magical
+        affinity. Choose one type of dragon from the Metallic Ancestry table. This
+        determines the damage type for your other traits as shown in the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon Color</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Brass</td>
+        <td>Fire</td>
+        <td>15ft Cone (CON save)</td>
+      </tr>
+      <tr>
+        <td>Bronze</td>
+        <td>Lightning</td>
+        <td>15ft Cone (CON save)</td>
+      </tr>
+      <tr>
+        <td>Copper</td>
+        <td>Acid</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Gold</td>
+        <td>Fire</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Silver</td>
+        <td>Cold</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+    </table>
+
+    <Dropdown
+      title="Select Draconic Ancestry"
+      dropdownOpts={[
+        "Chromatic - Black",
+        "Chromatic - Blue",
+        "Chromatic - Green",
+        "Chromatic - Red",
+        "Chromatic - White",
+        "Metallic - Brass",
+        "Metallic - Bronze",
+        "Metallic - Copper",
+        "Metallic - Gold",
+        "Metallic - Silver",
+      ]}
+      bind:currOpt={fizbanSubtype}
+    />
   {:else if currSource === sources[3]}
     UA
   {/if}

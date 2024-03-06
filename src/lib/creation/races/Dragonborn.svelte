@@ -10,7 +10,7 @@
     "Fizban's Treasury of Dragons",
     "Unearthed Arcana",
   ];
-  let defaultSource = sources[3];
+  let defaultSource = sources[0];
   let currSource: string;
 
   // Disables `Choose` btn if source is switched
@@ -49,6 +49,7 @@
   defaultOpt={defaultSource}
 />
 
+<!-- TODO: Add base info on each source/subtype where relevant (Check Dwarf) -->
 <div id="content">
   <p>
     <em
@@ -255,7 +256,7 @@
     </ul>
 
     <Dropdown
-      title="Select Source"
+      title="Select Subtype"
       dropdownOpts={["Draconblood", "Ravenite"]}
       bind:currOpt={wildemountSubtype}
     />

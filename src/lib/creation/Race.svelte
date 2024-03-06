@@ -1,5 +1,7 @@
 <script lang="ts">
   import Dragonborn from "./races/Dragonborn.svelte";
+  import Dwarf from "./races/Dwarf.svelte";
+  import Elf from "./races/Elf.svelte";
   import { Race, type RaceInfo } from "../types/Races.d";
 
   // Get types of races from the `Race` enum.
@@ -10,8 +12,84 @@
     switch (r) {
       case Race.Dragonborn:
         return Dragonborn;
-
-      // FIXME: Add other races!
+      case Race.Dwarf:
+        return Dwarf;
+      case Race.Elf:
+        return Elf;
+      case Race.Gnome:
+      case Race.HalfElf:
+      case Race.HalfOrc:
+      case Race.Halfling:
+      case Race.Human:
+      case Race.Tiefling:
+      case Race.Custom:
+      case Race.Aarakocra:
+      case Race.Aasimar:
+      case Race.Changeling:
+      case Race.DeepGnome:
+      case Race.Duergar:
+      case Race.Eladrin:
+      case Race.Fairy:
+      case Race.Firbolg:
+      case Race.GenasiAir:
+      case Race.GenasiEarth:
+      case Race.GenasiFire:
+      case Race.GenasiWater:
+      case Race.Githyanki:
+      case Race.Githzerai:
+      case Race.Goliath:
+      case Race.Harengon:
+      case Race.Kenku:
+      case Race.Locathah:
+      case Race.Owlin:
+      case Race.Satyr:
+      case Race.SeaElf:
+      case Race.ShadarKai:
+      case Race.Tabaxi:
+      case Race.Tortle:
+      case Race.Triton:
+      case Race.Verdan:
+      case Race.Bugbear:
+      case Race.Centaur:
+      case Race.Goblin:
+      case Race.Grung:
+      case Race.Hobgoblin:
+      case Race.Kobold:
+      case Race.Lizardfolk:
+      case Race.Minotaur:
+      case Race.Orc:
+      case Race.Shifter:
+      case Race.YuanTi:
+      case Race.Kalashtar:
+      case Race.Warforged:
+      case Race.Kender:
+      case Race.Aetherborn:
+      case Race.Aven:
+      case Race.Khenra:
+      case Race.Kor:
+      case Race.Merfolk:
+      case Race.Naga:
+      case Race.Siren:
+      case Race.Vampire:
+      case Race.Dhamphir:
+      case Race.Hexblood:
+      case Race.Reborn:
+      case Race.Loxodon:
+      case Race.SimicHybrid:
+      case Race.Vedalken:
+      case Race.AstralElf:
+      case Race.Autognome:
+      case Race.Giff:
+      case Race.Hadozee:
+      case Race.Plasmoid:
+      case Race.Thrikreen:
+      case Race.Leonin:
+      case Race.Glitchling:
+      case Race.Owlfolk:
+      case Race.Rabbitfolk:
+      case Race.Revenant:
+      case Race.Viashino:
+        return null;
 
       default:
         return null;
@@ -100,7 +178,7 @@
   #overlay-content {
     background-color: #391313;
     opacity: 98%;
-    width: 80%;
+    width: 60%;
     height: 80%;
   }
 

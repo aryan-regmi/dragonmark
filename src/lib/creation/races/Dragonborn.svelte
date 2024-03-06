@@ -36,6 +36,8 @@
   $: if (fizbanSubtype !== "") {
     subtypeChosen = true;
   }
+
+  // TODO: Add ASI to creation page
 </script>
 
 <h1 id="title">Dragonborn</h1>
@@ -328,6 +330,36 @@
       </tr>
     </table>
 
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action on your turn,
+        you can replace one of your attacks with an exhalation of magical energy
+        in a 30-foot line that is 5 feet wide. Each creature in that area must make
+        a Dexterity saving throw (DC = 8 + your Constitution modifier + your proficiency
+        bonus). On a failed save, the creature takes 1d10 damage of the type associated
+        with your Chromatic Ancestry. On a successful save, it takes half as much
+        damage. This damage increases by 1d10 when you reach 5th level (2d10), 11th
+        level (3d10), and 17th level (4d10). You can use your Breath Weapon a number
+        of times equal to your proficiency bonus, and you regain all expended uses
+        when you finish a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong>
+        You have resistance to the damage type associated with your Chromatic Ancestry.
+      </li>
+      <li>
+        <strong>Chromatic Warding:</strong> Starting at 5th level, as an action,
+        you can channel your draconic energy to protect yourself. For 1 minute, you
+        become immune to the damage type associated with your Chromatic Ancestry.
+        Once you use this trait, you can’t do so again until you finish a long rest.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Common and one other language that you and
+        your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
     <h2>Metallic</h2>
     <p>
       <em>
@@ -397,6 +429,160 @@
       </tr>
     </table>
 
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action on your turn,
+        you can replace one of your attacks with an exhalation of magical energy
+        in a 15-foot cone. Each creature in that area must make a Dexterity saving
+        throw (DC = 8 + your Constitution modifier + your proficiency bonus). On
+        a failed save, the creature takes 1d10 damage of the type associated with
+        your Metallic Ancestry. On a successful save, it takes half as much damage.
+        This damage increases by 1d10 when you reach 5th level (2d10), 11th level
+        (3d10), and 17th level (4d10). You can use your Breath Weapon a number of
+        times equal to your proficiency bonus, and you regain all expended uses when
+        you finish a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong>
+        You have resistance to the damage type associated with your Metallic Ancestry.
+      </li>
+      <li>
+        <strong>Metallic Breath Weapon:</strong> At 5th level, you gain a second
+        breath weapon. When you take the Attack action on your turn, you can replace
+        one of your attacks with an exhalation in a 15-foot cone. The save DC for
+        this breath is 8 + your Constitution modifier + your proficiency bonus. Whenever
+        you use this trait, choose one:
+      </li>
+      <ul>
+        <li>
+          <strong>Enervating Breath:</strong>
+          Each creature in the cone must succeed on a Constitution saving throw or
+          become incapacitated until the start of your next turn.
+        </li>
+        <li>
+          <strong>Repulsion Breath:</strong>
+          Each creature in the cone must succeed on a Strength saving throw or be
+          pushed 20 feet away from you and be knocked prone.
+        </li>
+        <li>
+          Once you use your Metallic Breath Weapon, you can’t do so again until
+          you finish a long rest.
+        </li>
+      </ul>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Common and one other language that you and
+        your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
+    <h2>Gem</h2>
+    <p>
+      <em>
+        Gem dragonborn partake of the heritage of gem dragons, who claim to be
+        heirs of Sardior, the Ruby Dragon. The colors and mysterious powers of
+        gem dragons — amethyst, crystal, emerald, sapphire, and topaz — gleam in
+        these dragonborn’s scaled skin and course through their veins. Theirs
+        are the wonders of the mind, the force of will, the brilliant light of
+        insight, and the resounding echo of discovery — but also the desiccation
+        of despair.
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong>
+        You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong>
+        Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Gem Ancestry:</strong>
+        You trace your ancestry to a Gem dragon, granting you a special magical affinity.
+        Choose one type of dragon from the Gem Ancestry table. This determines the
+        damage type for your other traits as shown in the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Amethyst</td>
+        <td>Force</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Crystal</td>
+        <td>Radiant</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Emerald</td>
+        <td>Psychic</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Sapphire</td>
+        <td>Thunder</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Topaz</td>
+        <td>Necrotic</td>
+        <td>15ft Cone (DEX save)</td>
+      </tr>
+    </table>
+
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action on your turn,
+        you can replace one of your attacks with an exhalation of magical energy
+        in a 15-foot cone. Each creature in that area must make a Dexterity saving
+        throw (DC = 8 + your Constitution modifier + your proficiency bonus). On
+        a failed save, the creature takes 1d10 damage of the type associated with
+        your Gem Ancestry. On a successful save, it takes half as much damage. This
+        damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10),
+        and 17th level (4d10). You can use your Breath Weapon a number of times equal
+        to your proficiency bonus, and you regain all expended uses when you finish
+        a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong>
+        You have resistance to the damage type associated with your Gem Ancestry.
+      </li>
+      <li>
+        <strong>Psionic Mind:</strong> You can telepathically speak to any creature
+        you can see within 30 feet of you. You don’t need to share a language with
+        the creature, but the creature must be able to understand at least one language.
+      </li>
+      <li>
+        <strong>Gem Flight:</strong> Starting at 5th level, you can use a bonus action
+        to manifest spectral wings on your body. These wings last for 1 minute. For
+        the duration, you gain a flying speed equal to your walking speed and can
+        hover. Once you use this trait, you can’t do so again until you finish a
+        long rest.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Common and one other language that you and
+        your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
     <Dropdown
       title="Select Draconic Ancestry"
       dropdownOpts={[
@@ -410,11 +596,318 @@
         "Metallic - Copper",
         "Metallic - Gold",
         "Metallic - Silver",
+        "Gem - Amethyst",
+        "Gem - Crystal",
+        "Gem - Emerald",
+        "Gem - Sapphire",
+        "Gem - Topaz",
       ]}
       bind:currOpt={fizbanSubtype}
     />
   {:else if currSource === sources[3]}
-    UA
+    <h2>Chromatic</h2>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong> You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong> Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Chromatic Ancestry:</strong> You trace your ancestry to a chromatic
+        dragon, granting you a special magical affinity. Choose one type of dragon
+        from the Chromatic Ancestry table. This determines the damage type for your
+        other traits as shown in the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon Color</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Black</td>
+        <td>Acid</td>
+        <td>30ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Blue</td>
+        <td>Lightning</td>
+        <td>30ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Green</td>
+        <td>Poison</td>
+        <td>30ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Red</td>
+        <td>Fire</td>
+        <td>30ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>White</td>
+        <td>Cold</td>
+        <td>30ft x 5ft Line (DEX save)</td>
+      </tr>
+    </table>
+
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action, you can
+        replace one of your attacks with an exhalation of a magical energy in a 30-foot
+        line that is 5 feet wide. Each creature in the area must make a Dexterity
+        saving throw against a DC equal to 8 + your Constitution modifier + your
+        proficiency bonus. A creature takes 2d8 damage of the type associated with
+        your Chromatic Ancestry on a failed save, and half as much damage on a successful
+        one. This damage increases by 1d8 when you reach 5th level (3d8), 11th level
+        (4d8), and 17th level (5d8). You can use this trait a number of times equal
+        to your proficiency bonus, and you regain all expended uses when you finish
+        a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong> You have resistance to the damage type
+        associated with your Chromatic Ancestry.
+      </li>
+      <li>
+        <strong>Chromatic Warding:</strong> Starting at 3rd level, as an action,
+        you can channel your draconic energies to protect yourself. For 10 minutes,
+        you become immune to the damage type associated with your Chromatic Ancestry.
+        Once you use this trait, you can’t do so again until you finish a long rest.
+      </li>
+      <li>
+        <strong>Languages:</strong> You can speak, read, and write Common and one
+        other language that you and your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
+    <h2>Metallic</h2>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong> You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong> Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Metallic Ancestry:</strong> You trace your ancestry to a metallic
+        dragon, granting you a special magical affinity. Choose one type of dragon
+        from the Metallic Ancestry table. This determines the damage type for your
+        other traits as shown in the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon Color</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Brass</td>
+        <td>Acid</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Bronze</td>
+        <td>Lightning</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Copper</td>
+        <td>Acid</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Gold</td>
+        <td>Fire</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Silver</td>
+        <td>Cold</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+    </table>
+
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action, you can
+        replace one of your attacks with an exhalation of a magical energy in a 15-foot
+        line that is 5 feet wide. Each creature in the area must make a Dexterity
+        saving throw against a DC equal to 8 + your Constitution modifier + your
+        proficiency bonus. A creature takes 2d8 damage of the type associated with
+        your Metallic Ancestry on a failed save, and half as much damage on a successful
+        one. This damage increases by 1d8 when you reach 5th level (3d8), 11th level
+        (4d8), and 17th level (5d8). You can use this trait a number of times equal
+        to your proficiency bonus, and you regain all expended uses when you finish
+        a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong> You have resistance to the damage type
+        associated with your Metallic Ancestry.
+      </li>
+      <li>
+        <strong>Metallic Breath Weapon:</strong> At 3rd level you gain a second breath
+        weapon. When you take the Attack action, you can replace one of your attacks
+        with an exhalation of a magical gas in a 15-foot cone. The save DC for this
+        breath is 8 + your Constitution modifier + your proficiency bonus. When you
+        use this ability, choose one:
+      </li>
+      <ul>
+        <li>
+          Each creature in the area must succeed on a Strength saving throw or
+          be pushed 20 feet away from you and be knocked prone.
+        </li>
+        <li>
+          Each creature in the area must succeed on a Constitution saving throw
+          or become incapacitated until the start of your next turn.
+        </li>
+        <li>
+          Once you use your Metallic Breath Weapon, you can’t do so again until
+          you finish a long rest.
+        </li>
+      </ul>
+      <li>
+        <strong>Languages:</strong> You can speak, read, and write Common and one
+        other language that you and your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
+    <h2>Gem</h2>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Increase one ability score by 2
+        and increase a different one by 1, or you increase three different scores
+        by 1.
+      </li>
+      <li>
+        <strong>Type:</strong> You are a Humanoid.
+      </li>
+      <li>
+        <strong>Size:</strong> You are Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong> Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Gem Ancestry:</strong> You trace your ancestry to a Gem dragon, granting
+        you a special magical affinity. Choose one type of dragon from the Gem Ancestry
+        table. This determines the damage type for your other traits as shown in
+        the table.
+      </li>
+    </ul>
+
+    <table id="dragon-breath">
+      <tr>
+        <th>Dragon Color</th>
+        <th>Damage Type</th>
+        <th>Breath Weapon</th>
+      </tr>
+      <tr>
+        <td>Amethyst</td>
+        <td>Force</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Crystal</td>
+        <td>Radiant</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Emerald</td>
+        <td>Psychic</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Sapphire</td>
+        <td>Thunder</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+      <tr>
+        <td>Topaz</td>
+        <td>Necrotic</td>
+        <td>15ft x 5ft Line (DEX save)</td>
+      </tr>
+    </table>
+
+    <ul class="info">
+      <li>
+        <strong>Breath Weapon:</strong> When you take the Attack action, you can
+        replace one of your attacks with an exhalation of a magical energy in a 15-foot
+        line that is 5 feet wide. Each creature in the area must make a Dexterity
+        saving throw against a DC equal to 8 + your Constitution modifier + your
+        proficiency bonus. A creature takes 2d8 damage of the type associated with
+        your Gem Ancestry on a failed save, and half as much damage on a successful
+        one. This damage increases by 1d8 when you reach 5th level (3d8), 11th level
+        (4d8), and 17th level (5d8). You can use this trait a number of times equal
+        to your proficiency bonus, and you regain all expended uses when you finish
+        a long rest.
+      </li>
+      <li>
+        <strong>Draconic Resistance:</strong> You have resistance to the damage type
+        associated with your Gem Ancestry.
+      </li>
+      <li>
+        <strong>Psionic Mind:</strong> You can telepathically speak to any creature
+        you can see within 30 feet of you. You don’t need to share a language with
+        the creature, but the creature must be able to understand at least one language.
+        Your communication doesn’t give the creature the ability to respond to you
+        telepathically.
+      </li>
+      <li>
+        <strong>Gem Flight:</strong> Starting at 3rd level, you can use your bonus
+        action to temporarily summon an array of spectral gems that match your Gem
+        Ancestry in the shape of wings that last for 1 minute. For the duration,
+        you gain a flying speed equal to your walking speed and can hover. Once you
+        use this trait, you can’t do so again until you finish a long rest.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Common and one other language that you and
+        your DM agree is appropriate for the character.
+      </li>
+    </ul>
+
+    <Dropdown
+      title="Select Draconic Ancestry"
+      dropdownOpts={[
+        "Chromatic - Black",
+        "Chromatic - Blue",
+        "Chromatic - Green",
+        "Chromatic - Red",
+        "Chromatic - White",
+        "Metallic - Brass",
+        "Metallic - Bronze",
+        "Metallic - Copper",
+        "Metallic - Gold",
+        "Metallic - Silver",
+        "Gem - Amethyst",
+        "Gem - Crystal",
+        "Gem - Emerald",
+        "Gem - Sapphire",
+        "Gem - Topaz",
+      ]}
+      bind:currOpt={phbSubtype}
+    />
   {/if}
 </div>
 

@@ -35,24 +35,27 @@
   .dropdown {
     position: relative;
     display: inline-block;
+    background-color: #21a179;
   }
 
   .dropdown-items {
-    border-radius: 1vh;
-    background-color: black;
-    opacity: 80%;
+    border-radius: 0;
+    opacity: 70%;
   }
 
   .dropdown-item {
-    border-radius: 1vh;
-    border-bottom-color: #666600;
+    background-color: #25353d;
+    border-radius: 0;
+    /* border-bottom-color: #666600; */
+    border-color: black;
     display: none;
     z-index: 1;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
   }
 
   button:hover {
     border-color: white;
-    color: white;
+    color: #21a179;
   }
 </style>

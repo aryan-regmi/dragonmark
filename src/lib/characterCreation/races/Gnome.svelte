@@ -79,7 +79,7 @@
       {/each}
     </ul>
 
-    <div>
+    <div id="forest">
       <h2>Forest</h2>
       <p>
         <em>
@@ -112,7 +112,7 @@
       </ul>
     </div>
 
-    <div>
+    <div id="rock">
       <h2>Rock</h2>
       <p>
         <em>
@@ -189,33 +189,85 @@
       {/each}
     </ul>
 
-    <h2>Pallid Elf</h2>
-    <p>
-      <em>
-        The pallid elves are a mystical and insightful people with skin as pale
-        as the surface of Exandria's largest moon. They emerged from the Pallid
-        Grove this century and wander the world with childlike curiosity.
-      </em>
-    </p>
-    <ul class="info">
-      <li>
-        <strong>Ability Score Increase:</strong>
-        Your Wisdom score increases by 1.
-      </li>
-      <li>
-        <strong>Incisive Sense:</strong>
-        You have advantage on Investigation and Insight checks.
-      </li>
-      <li>
-        <!-- FIXME: Link to spells -->
-        <strong>Blessing of the Moonweaver:</strong>
-        You know the Light cantrip. When you reach 3rd level, you can cast Sleep
-        once, and it recharges after a long rest. When you reach 5th level, you can
-        cast Invisibility (Self Only) once, and it recharges after a long rest. You
-        do not need the material components required of the spells. Wisdom is your
-        spellcasting ability for these spells.
-      </li>
-    </ul>
+    <div id="mark-of-scribing">
+      <h2>Mark of Scribing</h2>
+      <p>
+        <em>
+          If you're a gnome with the Mark of Scribing, you have this subrace,
+          with the following traits.
+        </em>
+      </p>
+      <ul class="info">
+        <li>
+          <strong>Ability Score Increase:</strong>
+          Your Charisma score increases by 1.
+        </li>
+        <li>
+          <strong>Gifted Scribe:</strong>
+          Whenever you make an Intelligence (History) or an Ability Check involving
+          Calligrapher's Supplies, you can roll a d4 and add the number rolled to
+          the total ability check.
+        </li>
+        <li>
+          <!-- FIXME: Link to spells -->
+          <strong>Scribe's Insight:</strong>
+          You know the <span class="spell">Message</span> cantrip. You can also
+          cast the <span class="spell">Comprehend Languages</span> spell with
+          this trait. Starting at 3rd level, you can also cast the
+          <span class="spell">Magic Mouth</span> spell with it. Once you cast
+          either spell with this trait, you can't cast that spell again until
+          you finish a Long Rest. <em>Intelligence</em> is your Spellcasting Ability
+          for these spells.
+        </li>
+        <li>
+          <!-- FIXME: Link to spells -->
+          <strong>Spells of the Mark:</strong>
+          If you have the Spellcasting or Pact Magic class feature, the spells on
+          the Mark of Scribing Spells table are added to the spell list of your Spellcasting
+          class.
+        </li>
+      </ul>
+
+      <!-- FIXME: Add overlay for spells!! -->
+      <table>
+        <tr>
+          <th>Spell Level</th>
+          <th>Spell</th>
+        </tr>
+        <tr>
+          <td>1st</td>
+          <td>
+            <span class="spell">Comprehend Languages</span>,
+            <span class="spell">Illusory Script</span>
+          </td>
+        </tr>
+        <tr>
+          <td>2nd</td>
+          <td>
+            <span class="spell">Animal Messenger</span>,
+            <span class="spell">Silence</span>
+          </td>
+        </tr>
+        <tr>
+          <td>3rd</td>
+          <td>
+            <span class="spell">Sending</span>,
+            <span class="spell">Tongues</span>
+          </td>
+        </tr>
+        <tr>
+          <td>4th</td>
+          <td>
+            <span class="spell">Arcane Eye</span>,
+            <span class="spell">Divination</span>
+          </td>
+        </tr>
+        <tr>
+          <td>5th</td>
+          <span class="spell">Dream</span>
+        </tr>
+      </table>
+    </div>
   {/if}
 </div>
 

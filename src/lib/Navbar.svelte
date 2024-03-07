@@ -50,12 +50,6 @@
     z-index: 5;
   }
 
-  .nav-item {
-    padding-left: 5vw;
-    background-color: inherit;
-    opacity: 100%;
-  }
-
   button:hover {
     border-color: black;
   }

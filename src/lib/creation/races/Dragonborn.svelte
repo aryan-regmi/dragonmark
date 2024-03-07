@@ -38,6 +38,9 @@
   }
 
   // TODO: Add ASI to creation page
+  // TODO: Move all subtypes, etc into its own component
+  // TODO: Create `subtype` component first!
+  // TODO: Export all important data (chosen race, chosen subrace, ASI, languages, speed, actions, misc options)
 </script>
 
 <h1 id="title">Dragonborn</h1>

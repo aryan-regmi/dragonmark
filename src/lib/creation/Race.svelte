@@ -178,7 +178,7 @@
   #overlay-content {
     background-color: #391313;
     opacity: 98%;
-    width: 60%;
+    width: 75%;
     height: 80%;
   }
 

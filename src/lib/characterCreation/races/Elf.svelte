@@ -81,6 +81,12 @@
     subtypeChosen = true;
   }
 
+  // Subtype from Plane Shift Zendikar
+  let uaSubtype: string;
+  $: if (uaSubtype !== "") {
+    subtypeChosen = true;
+  }
+
   $: if (
     currSource === sources[1] ||
     currSource === sources[2] ||
@@ -729,18 +735,103 @@
       dropdownOpts={["Tajuru", "Juraga", "Mul Daya"]}
       bind:currOpt={pszSubtype}
     />
+  {:else if currSource === sources[6]}
+    <!-- Unearthed Arcana -->
+
+    <p>
+      <em><strong>{summary}</strong></em>
+    </p>
+
+    <ul class="info">
+      {#each Object.entries(baseInfo) as [section, desc]}
+        <li><strong>{section}: </strong>{desc}</li>
+      {/each}
+    </ul>
+
+    <h2>Avariel Elf</h2>
+    <p>
+      <em>
+        The avariel are winged elves. These rare creatures were more common when
+        the worlds of the multiverse were young, but frequent conflicts with
+        dragons much reduced the winged elves’ number. Still, a few colonies
+        persist here and there in the Material Plane and on the Plane of Air.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Flight:</strong>
+        You have a flying speed of 30 feet. To use this speed, you can't be wearing
+        medium or heavy armor.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Auran.
+      </li>
+    </ul>
+
+    <h2>Gurgach Elf</h2>
+    <p>
+      <em>
+        The grugach of the world of Greyhawk shun contact with other folk,
+        preferring the solace of the deepest forests and the companionship of
+        wild animals. Even other elves draw their suspicion.
+        <br />
+        The grugach tend toward chaos and neutrality. They feel no special duty to
+        anyone beyond their own folk and the forest that is their home. Troubles
+        beyond their borders are best kept there. At the same time, they harbor little
+        ambition beyond a peaceful coexistence with nature.
+        <br />
+        If anyone is fool enough to disturb a grugach realm, these elves take to
+        arms and fight in earnest. Grugach master the basic weapons needed to hunt
+        and forage in the wood. Every copse of trees becomes a sniper's nest, and
+        each forest meadow is an ambush point. The grugach set pits filled with stakes,
+        snares that leave an intruder helpless to grugach arrows, and other snares
+        designed to kill rather than capture. The grugach fight to the death to preserve
+        their realms.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Strength score increases by
+        1.
+      </li>
+      <li>
+        <strong>Grugach Weapon Training:</strong>
+        You have proficiency with the spear, shortbow, longbow, and net.
+      </li>
+      <li>
+        <!-- FIXME: Link to spells -->
+        <strong>Cantrip:</strong>
+        You know one cantrip of your choice from the
+        <span class="spell-list">Druid spell list</span>. Wisdom is your
+        spellcasting ability for it.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        Unlike other elves, you don't speak, read, or write Common. You instead speak,
+        read, and write Sylvan.
+      </li>
+    </ul>
+
+    <Dropdown
+      title="Select Subtype"
+      dropdownOpts={["Avari Elf", "Gurgach Elf"]}
+      bind:currOpt={uaSubtype}
+    />
   {/if}
 </div>
 
 <style>
   @import "./subtypeStyles.css";
 
-  .spell:hover {
+  .spell:hover,
+  .spell-list:hover {
     color: #ff6699;
     cursor: pointer;
   }
 
-  .spell {
+  .spell,
+  .spell-list {
     color: #81ae9d;
   }
 </style>

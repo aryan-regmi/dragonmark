@@ -1,3 +1,5 @@
+<!-- FIXME: Write in style of `Elf.svelte` -->
+
 <script lang="ts">
   import Dropdown from "../Dropdown.svelte";
 

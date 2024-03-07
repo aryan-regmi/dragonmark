@@ -69,6 +69,18 @@
     subtypeChosen = true;
   }
 
+  // Subtype from Plane Shift Kaladesh
+  let pskSubtype: string;
+  $: if (pskSubtype !== "") {
+    subtypeChosen = true;
+  }
+
+  // Subtype from Plane Shift Zendikar
+  let pszSubtype: string;
+  $: if (pszSubtype !== "") {
+    subtypeChosen = true;
+  }
+
   $: if (
     currSource === sources[1] ||
     currSource === sources[2] ||
@@ -441,6 +453,282 @@
         your DM agree is appropriate.
       </li>
     </ul>
+  {:else if currSource === sources[4]}
+    <!-- Plane Shift: Kaladesh -->
+
+    <p>
+      <em><strong>{summary}</strong></em>
+    </p>
+
+    <ul class="info">
+      {#each Object.entries(baseInfo) as [section, desc]}
+        <li><strong>{section}: </strong>{desc}</li>
+      {/each}
+    </ul>
+
+    <h2>Bishtahar/Tirahar Elves</h2>
+    <p>
+      <em>
+        Elves who dwell in the forest and countryside are known as the
+        Bishtahar. Most live in isolated communities away from other races,
+        though they still trade with them. In fact, much of Kaladesh’s food
+        supply is grown by elves. Bishtahar cultivators grow food, decorative
+        flowers, wood for building, and elaborate living sculptures in their
+        meandering gardens and fields. They use the plane’s ubiquitous
+        technology to foster the growth of plants and animals, utilizing
+        automatons as gardeners and herders, and employing elaborate, nearly
+        invisible systems controlling heat, water, and nutrients.
+        <br />
+        Elves who forsake technology entirely are called the Tirahar. Some elves
+        with Tirahar sympathies live within cities or farms, but most simply withdraw
+        to the wilder areas of Kaladesh. No more than one in a hundred elves is counted
+        among the Tirahar, and many members of other races are unaware that these
+        reclusive elves even exist.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Wisdom score increases by 1.
+      </li>
+      <li>
+        <strong>Elf Weapon Training:</strong>
+        You have proficiency with the longsword, shortsword, shortbow, and longbow.
+      </li>
+      <li>
+        <strong>Fleet of Foot:</strong>
+        Your base walking speed increases to 35 feet.
+      </li>
+      <li>
+        <!-- FIXME: Link to spells -->
+        <strong>Mask of the Wild:</strong>
+        You can attempt to hide even when you are only lightly obscured by foliage,
+        heavy rain, falling snow, mist, and other natural phenomena.
+      </li>
+    </ul>
+
+    <h2>Vahadar Elves</h2>
+    <p>
+      <em>
+        The Vahadar are elves who dwell in the cities of Kaladesh. They are
+        comfortable with technology, and work as planners, architects,
+        aether-seers, or inventors. Some of them use the techniques of Bishtahar
+        cultivators to grow food on rooftops, towers, and greenways. The Vahadar
+        are generally integrated into the rest of society on Kaladesh, living in
+        cities dominated by the other races (though, as in Ghirapur, many of
+        them live in specific garden-like neighborhoods) and engaging in trade.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Wisdom score increases by 1.
+      </li>
+      <li>
+        <strong>Elf Weapon Training:</strong>
+        You have proficiency with the longsword, shortsword, shortbow, and longbow.
+      </li>
+      <li>
+        <!-- FIXME: Link to spells -->
+        <strong>Cantrip:</strong>
+        You know one cantrip of your choice from the Druid spell list. Wisdom is
+        your spellcasting ability for it.
+      </li>
+      <li>
+        <strong>Extra Language:</strong>
+        You can speak, read, and write one extra language of your choice.
+      </li>
+    </ul>
+
+    <Dropdown
+      title="Select Subtype"
+      dropdownOpts={["Bishtahar/Tirahar Elf", "Vahadar Elf"]}
+      bind:currOpt={pskSubtype}
+    />
+  {:else if currSource === sources[5]}
+    <!-- Plane Shift: Zendikar -->
+
+    <p>
+      <em>
+        <strong>
+          Elves are strongly associated with nature, the magic that flows
+          through their forest homes. Their shamans and druids channel this
+          magic of life and growth, communing with the land or the spirits of
+          the departed. Striving to live in harmony with nature, they celebrate
+          the ties between their communities and their connection with the
+          broader world around them.
+          <br />
+          The elves of Zendikar have much in common with the elves of other worlds.
+          Your elf character has the following traits.
+        </strong>
+      </em>
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong>
+        Your Wisdom score increases by 2.
+      </li>
+      <li>
+        <strong>Age:</strong>
+        Although elves reach physical maturity at about the same age as humans, the
+        elven understanding of adulthood goes beyond physical growth to encompass
+        worldly experience. An elf typically claims adulthood and an adult name around
+        the age of 100 and can live to be 750 years old.
+      </li>
+      <li>
+        <strong>Alignment:</strong>
+        Elves love freedom, variety, and self-expression, so they lean strongly towards
+        the gentler aspects of chaos. They value and protect others' freedom as well
+        as their own, and are good more often than not. Drow are an exception; their
+        exile into the Underdark has made them vicious and dangerous. Drow are more
+        often evil than not.
+      </li>
+      <li>
+        <strong>Size:</strong>
+        Elves range from under 5 to over 6 feet tall and have slender builds. Your
+        size is Medium.
+      </li>
+      <li>
+        <strong>Speed:</strong>
+        Your walking speed is 30 feet.
+      </li>
+      <li>
+        <strong>Darkvision:</strong>
+        Accustomed to twiligt forests and the night sky, you have superior vision
+        in dark and dim conditions. You can see in dim light within 60 feet of you
+        as if it were bright light, and in darkness as if it were dim light. You
+        can't discern color in darkness, only shades of gray.
+      </li>
+      <li>
+        <strong>Fey Ancestry:</strong>
+        You have advantage on saving throws against being charmed, and magic can't
+        put you to sleep.
+      </li>
+      <li>
+        <strong>Trance:</strong>
+        Elves do not sleep. Instead they meditate deeply, remaining semi-conscious,
+        for 4 hours a day. The Common word for this meditation is "trance." While
+        meditating, you dream after a fashion; such dreams are actually mental exercises
+        that have become reflexive after years of practice. After resting in this
+        way, you gain the same benefit a human would from 8 hours of sleep.
+      </li>
+      <li>
+        <strong>Keen Senses.:</strong>
+        You have proficiency in the Perception skill.
+      </li>
+      <li>
+        <strong>Languages:</strong>
+        You can speak, read, and write Common and Elven.
+      </li>
+    </ul>
+
+    <h2>Tajuru</h2>
+    <p>
+      <em>
+        The Tajuru nation is the largest of the three main elven nations,
+        concentrated in Murasa and spread across other parts of Zendikar as
+        hundreds of far-flung clans. Tajuru elves are the most open to people of
+        other races, seeing their skills and perspectives as valuable new tools
+        for survival. The Tajuru are also more open to new lifestyles, be it
+        living in a mountaintop citadel or roaming grassy plains.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Charisma score increases by
+        1.
+      </li>
+      <li>
+        <strong>Skill Versatility:</strong>
+        You gain proficiency in any combination of two skills or tools of your choice.
+      </li>
+    </ul>
+
+    <h2>Juraga</h2>
+    <p>
+      <em>
+        The elves of the imperious Joraga nation of Bala Ged have little respect
+        for any other race of Zendikar — or even for other elves. The survival
+        of their nation and its traditions is the Joraga elves’ only goal, and
+        they view the influence of others as a weakness. The Joraga eschew the
+        goods and habits of others, even avoiding the pathways blazed by the
+        Tajuru when possible. Many view the nomadic Joraga clans as little more
+        than bands of roving murderers, but a complex culture hides behind those
+        clans’ aggressive exterior.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Dexterity score increases by
+        1.
+      </li>
+      <li>
+        <strong>Elf Weapon Training:</strong>
+        You have proficiency with the longsword, shortsword, shortbow, and longbow.
+      </li>
+      <li>
+        <strong>Fleet of Foot:</strong>
+        Your base walking speed increases to 35 feet.
+      </li>
+      <li>
+        <strong>Mask of the Wild:</strong>
+        You can attempt to hide even when you are only lightly obscured by foliage,
+        heavy rain, falling snow, mist, and other natural phenomena.
+      </li>
+    </ul>
+
+    <h2>Mul Daya</h2>
+    <p>
+      <em>
+        Elves of the Mul Daya nation of Bala Ged are set apart from other elves
+        by their relationship with the spirits of their elven ancestors. To the
+        Mul Daya, the spirit world and the mortal realm are different only in
+        terms of their tangibility. Death and the spirits of the dead are as
+        much a part of the lives of the Mul Daya as is the natural world. This
+        is not a macabre sentiment to the elves; they simply view it as the
+        truest sense of the natural order.
+        <br />
+        Mul Daya elves can often be recognized by their face painting and tattooing.
+        Many Mul Daya decorate their skins with an enwrapping vine motif, and make
+        use of poisons and acids collected at great cost from strange creatures and
+        plants in the depths of Kazandu.
+      </em>
+    </p>
+    <ul class="info">
+      <li>
+        <strong>Ability Score Increase:</strong> Your Strength score increases by
+        1.
+      </li>
+      <li>
+        <strong>Superior Darkvision:</strong>
+        Your darkvision has a radius of 120 feet.
+      </li>
+      <li>
+        <strong>Sunlight Sensitivity:</strong>
+        You have disadvantage on attack rolls and on Wisdom (Perception) checks that
+        rely on sight when you, the target of your attack, or whatever you are trying
+        to perceive is in direct sunlight.
+      </li>
+      <li>
+        <!-- FIXME: Link spells! -->
+        <strong>Mul Daya Magic:</strong>
+        You know the <span class="spell">Chill Touch</span> cantrip. When you reach
+        3rd level, you can cast the hex spell once with this trait and regain the
+        ability to do so when you finish a long rest. When you reach 5th level, you
+        can cast the darkness spell once with this trait and regain the ability to
+        do so when you finish a long rest. Wisdom is your spellcasting ability for
+        these spells.
+      </li>
+      <li>
+        <strong>Elf Weapon Training:</strong>
+        You have proficiency with the longsword, shortsword, shortbow, and longbow.
+      </li>
+    </ul>
+
+    <Dropdown
+      title="Select Subtype"
+      dropdownOpts={["Tajuru", "Juraga", "Mul Daya"]}
+      bind:currOpt={pszSubtype}
+    />
   {/if}
 </div>
 
@@ -449,5 +737,10 @@
 
   .spell:hover {
     color: #ff6699;
+    cursor: pointer;
+  }
+
+  .spell {
+    color: #81ae9d;
   }
 </style>

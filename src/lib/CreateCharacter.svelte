@@ -9,6 +9,7 @@
 
   // Character info
   let characterName: string;
+  let race: string;
 </script>
 
 <div><Navbar {navOpts} bind:switchPage bind:currPage /></div>
@@ -19,7 +20,7 @@
     <button class="next-page-btn" on:click={() => switchPage(1)}>Next</button>
   </div>
 {:else if currPage === "Race"}
-  <Race />
+  <Race bind:chosenRace={race} />
   <div class="next-page">
     <button class="next-page-btn" on:click={() => switchPage(2)}>Next</button>
   </div>

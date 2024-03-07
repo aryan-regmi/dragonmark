@@ -1,3 +1,5 @@
+<!-- NOTE: Pallete: https://coolors.co/1e1e24-fb9f89-c4af9a-81ae9d-21a179 -->
+
 <script lang="ts">
   import CreateCharacter from "./CreateCharacter.svelte";
   import LoadCharacter from "./LoadCharacter.svelte";

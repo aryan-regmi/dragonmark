@@ -121,7 +121,7 @@
   }
 
   const chosenStyle = "color: orange;";
-  let chosenRace = "";
+  export let chosenRace: string = "";
   function chooseRace(idx: number) {
     chosenRace = races[idx].race;
     closeOverlay(idx);
@@ -176,7 +176,7 @@
 
 <style>
   #overlay-content {
-    background-color: #391313;
+    background-color: #1e1e24;
     opacity: 98%;
     width: 75%;
     height: 80%;

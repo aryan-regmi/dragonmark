@@ -1,6 +1,4 @@
 // Possible races to choose from.
-//
-// FIXME: Add the rest!
 export enum Race {
   Dragonborn = "Dragonborn",
   Dwarf = "Dwarf",

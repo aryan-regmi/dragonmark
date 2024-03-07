@@ -2,6 +2,7 @@
   import Dragonborn from "./races/Dragonborn.svelte";
   import Dwarf from "./races/Dwarf.svelte";
   import Elf from "./races/Elf.svelte";
+  import Gnome from "./races/Gnome.svelte";
   import { Race, type RaceInfo } from "../types/Races.d";
 
   // Get types of races from the `Race` enum.
@@ -17,6 +18,7 @@
       case Race.Elf:
         return Elf;
       case Race.Gnome:
+        return Gnome;
       case Race.HalfElf:
       case Race.HalfOrc:
       case Race.Halfling:

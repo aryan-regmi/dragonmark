@@ -1,7 +1,7 @@
 <script lang="ts">
   import Navbar from "./Navbar.svelte";
-  import Name from "./creation/Name.svelte";
-  import Race from "./creation/Race.svelte";
+  import Name from "./characterCreation/Name.svelte";
+  import Race from "./characterCreation/Race.svelte";
 
   let switchPage: (newPage: number) => void;
   let currPage: string;

@@ -916,46 +916,5 @@
 </div>
 
 <style>
-  #title {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1vh;
-    border-radius: 1vh;
-  }
-
-  #content {
-    padding: 1vh;
-    color: white;
-  }
-
-  .info {
-    list-style-type: disc;
-  }
-
-  table {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 2vh;
-    margin-top: 2vh;
-  }
-
-  th {
-    background-color: rgba(51, 51, 0, 0.9);
-  }
-
-  table,
-  th,
-  td {
-    border: 0.2vw solid;
-    border-color: white;
-    border-collapse: collapse;
-  }
-
-  li {
-    margin-bottom: 1vh;
-    text-align: left;
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 1vw;
-    padding: 0.5vh 0.5vw 0.5vh 0.5vw;
-  }
+  @import "./subtypeStyles.css";
 </style>
